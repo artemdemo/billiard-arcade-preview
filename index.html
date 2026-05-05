@@ -32,9 +32,9 @@
         left: 0;
       }
     </style>
-    <link rel="dns-prefetch" href="//api.poki.com" />
+    <!-- <link rel="dns-prefetch" href="//api.poki.com" />
     <link rel="dns-prefetch" href="//a.poki-cdn.com" />
-    <!-- <script
+    <script
       defer
       src="//game-cdn.poki.com/scripts/v2/poki-sdk.js"
       onload="poki_sdk_loaded()"
@@ -42,17 +42,17 @@
   </head>
   <body>
     <script id="poki-sdk-setup" type="text/javascript">
-      var isPokiSDKInited = false;
-      function poki_sdk_loaded() {
-        PokiSDK.init().then(
-          () => {
-            isPokiSDKInited = true;
-          },
-          () => {
-            isPokiSDKInited = true;
-          }
-        );
-      }
+      // var isPokiSDKInited = false;
+      // function poki_sdk_loaded() {
+      //   PokiSDK.init().then(
+      //     () => {
+      //       isPokiSDKInited = true;
+      //     },
+      //     () => {
+      //       isPokiSDKInited = true;
+      //     }
+      //   );
+      // }
     </script>
     <canvas id="glcanvas" tabindex="1"></canvas>
     <div class="loading-progress"></div>
