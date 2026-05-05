@@ -69,49 +69,49 @@
       miniquad_add_plugin({
         register_plugin: (importObject) => {
           importObject.env.ext_js_game_loading_finished = () => {
-            PokiSDK.gameLoadingFinished();
+            // PokiSDK.gameLoadingFinished();
             // console.log("PokiSDK.gameLoadingFinished");
           };
           importObject.env.ext_js_gameplay_start = debounce(() => {
-            PokiSDK.gameplayStart();
+            // PokiSDK.gameplayStart();
             // console.log("PokiSDK.gameplayStart()");
           }, 100);
           importObject.env.ext_js_gameplay_stop = () => {
-            PokiSDK.gameplayStop();
+            // PokiSDK.gameplayStop();
             // console.log("PokiSDK.gameplayStop()");
           };
           importObject.env.ext_js_commercial_break = () => {
             // console.log('PokiSDK.commercialBreak()');
-            PokiSDK.commercialBreak(() => {
-              // you can pause any background music or other audio here
-              wasm_exports.commercial_break_start();
-              // console.log('wasm_exports.commercial_break_start()');
-            }).then(() => {
-              // console.log("Commercial break finished, proceeding to game");
-              // if the audio was paused you can resume it here
-              // (keep in mind that the function above to pause it might not always get called)
-              // continue your game here
-              wasm_exports.commercial_break_end();
-              // console.log('wasm_exports.commercial_break_end()');
-            });
+            // PokiSDK.commercialBreak(() => {
+            //   // you can pause any background music or other audio here
+            //   wasm_exports.commercial_break_start();
+            //   // console.log('wasm_exports.commercial_break_start()');
+            // }).then(() => {
+            //   // console.log("Commercial break finished, proceeding to game");
+            //   // if the audio was paused you can resume it here
+            //   // (keep in mind that the function above to pause it might not always get called)
+            //   // continue your game here
+            //   wasm_exports.commercial_break_end();
+            //   // console.log('wasm_exports.commercial_break_end()');
+            // });
           };
           importObject.env.ext_js_reward_break = () => {
             // pause your game here if it isn't already
-            PokiSDK.rewardedBreak(() => {
-              // you can pause any background music or other audio here
-              wasm_exports.reward_break_start();
-            }).then((success) => {
-              if (success) {
-                // video was displayed, give reward
-                wasm_exports.reward_break_end_success();
-              } else {
-                // video not displayed, should not give reward
-                wasm_exports.reward_break_end_fail();
-              }
-              // if the audio was paused you can resume it here
-              // (keep in mind that the function above to pause it might not always get called)
-              // continue your game here
-            });
+            // PokiSDK.rewardedBreak(() => {
+            //   // you can pause any background music or other audio here
+            //   wasm_exports.reward_break_start();
+            // }).then((success) => {
+            //   if (success) {
+            //     // video was displayed, give reward
+            //     wasm_exports.reward_break_end_success();
+            //   } else {
+            //     // video not displayed, should not give reward
+            //     wasm_exports.reward_break_end_fail();
+            //   }
+            //   // if the audio was paused you can resume it here
+            //   // (keep in mind that the function above to pause it might not always get called)
+            //   // continue your game here
+            // });
           };
         },
       });
